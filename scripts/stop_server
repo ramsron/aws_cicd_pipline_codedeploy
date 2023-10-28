@@ -1,6 +1,20 @@
 #!/bin/bash
-isExistApp = `pgrep httpd`
-if [[ -n  $isExistApp ]]; then
-    service httpd stop        
+
+
+#!/bin/bash
+
+# Check if Apache is running (by checking its service status)
+if systemctl is-active --quiet apache2; then
+    # Apache is running, so stop it
+    sudo systemctl stop apache2
+    echo "Apache has been stopped."
+else
+    echo "Apache is not running."
 fi
+
+
+#isExistApp = `pgrep httpd`
+#if [[ -n  $isExistApp ]]; then
+#    service httpd stop        
+#fi
 

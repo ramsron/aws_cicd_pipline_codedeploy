@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-#!/bin/bash
-
 # Check if Apache is running (by checking its service status)
 if systemctl is-active --quiet apache2; then
     # Apache is running, so stop it
